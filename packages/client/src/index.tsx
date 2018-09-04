@@ -1,9 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Hello } from "../src/components/Hello";
+import "normalize.css";
+import Home from "./pages/Home";
 
-ReactDOM.render(
-  <Hello compiler="Typescript" framework="React" />,
-  document.getElementById("root"),
-);
+ReactDOM.render(<Home />, document.getElementById("root"));
