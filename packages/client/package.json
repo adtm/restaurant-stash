@@ -4,9 +4,17 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
+    "precommit": "lint-staged",
     "start": "webpack"
   },
-  "author": "",
+  "lint-staged": {
+    "**/*.tsx": [
+      "tslint -c tslint.json **/*.tsx",
+      "prettier --parser typescript --write",
+      "git add"
+    ]
+  },
+  "author": "Tomas Eglinskas",
   "license": "ISC",
   "dependencies": {
     "@types/react": "^16.4.13",
@@ -16,7 +24,11 @@
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
     "source-map-loader": "^0.2.4",
+    "tslint": "^5.11.0",
     "typescript": "^3.0.3",
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0"
