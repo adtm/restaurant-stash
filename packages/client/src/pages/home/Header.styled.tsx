@@ -5,10 +5,11 @@ export const Title = styled.h1`
   font-family: Baskerville;
   font-weight: normal;
 
+  margin-top: 0;
   border-bottom: 5px solid #32bff2;
   max-width: 50px;
 `;
 
 export const Description = styled.p`
-  max-width: 300px;
+  font-family: Rubik;
 `;

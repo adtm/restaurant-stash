@@ -4,6 +4,8 @@ export const InputField = styled.input`
   border: 2px solid #000;
   border-radius: 10px;
 
+  font-family: Rubik;
+
   padding: 8px;
   outline: none;
 `;

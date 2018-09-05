@@ -2,6 +2,6 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import "normalize.css";
-import Home from "./pages/Home";
+import { App } from "./App";
 
-ReactDOM.render(<Home />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
