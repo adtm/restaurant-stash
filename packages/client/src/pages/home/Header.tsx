@@ -7,8 +7,8 @@ type Props = {
 };
 
 export const Header: React.SFC<Props> = ({ title, description }: Props) => (
-  <>
+  <section test-id="header">
     <Title>{title}</Title>
     <Description>{description}</Description>
-  </>
+  </section>
 );

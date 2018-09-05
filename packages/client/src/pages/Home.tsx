@@ -1,4 +1,16 @@
 import * as React from "react";
+import styled from "styled-components";
+
+const Layout = styled.div`
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 1fr;
+`;
+
+const Login = styled.div`
+  grid-column: 2;
+  grid-row: 2 / span 3;
+`;
 
 import { Header } from "./home/Header";
 import { Input } from "./home/Input";
@@ -15,28 +27,28 @@ export default class Home extends React.Component<object, State> {
   public render() {
     const { username, password } = this.state;
     return (
-      <div style={{ padding: "110px 180px" }}>
-        <section test-id="header">
+      <Layout>
+        <Login>
           <Header
             title="Stash"
             description="Forget all the restaurants lists and save everything in one place."
           />
-        </section>
-        <section>
-          <Input
-            value={username}
-            title="username"
-            onChange={this.onUsernameChange}
-            type="text"
-          />
-          <Input
-            value={password}
-            title="password"
-            onChange={this.onPasswordChange}
-            type="password"
-          />
-        </section>
-      </div>
+          <section>
+            <Input
+              value={username}
+              title="username"
+              onChange={this.onUsernameChange}
+              type="text"
+            />
+            <Input
+              value={password}
+              title="password"
+              onChange={this.onPasswordChange}
+              type="password"
+            />
+          </section>
+        </Login>
+      </Layout>
     );
   }
 
