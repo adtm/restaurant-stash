@@ -1,12 +1,15 @@
 import * as React from "react";
+import { Input } from "./home/Input";
 
-interface IState {
-  username: string;
-  password: string;
-}
+const initialState = {
+  password: "",
+  username: "",
+};
+type State = Readonly<typeof initialState>;
 
-export default class Home extends React.Component<{}, IState> {
-  public state = { username: "", password: "" };
+export default class Home extends React.Component<object, State> {
+  public readonly state: State = initialState;
+
   public render() {
     const { username, password } = this.state;
     return (
@@ -18,13 +21,15 @@ export default class Home extends React.Component<{}, IState> {
           </p>
         </section>
         <section>
-          <input
+          <Input
             value={username}
+            title="username"
             onChange={this.onUsernameChange}
             type="text"
           />
-          <input
+          <Input
             value={password}
+            title="password"
             onChange={this.onPasswordChange}
             type="password"
           />
@@ -32,6 +37,7 @@ export default class Home extends React.Component<{}, IState> {
       </div>
     );
   }
+
   private onUsernameChange = (event: { target: HTMLInputElement }) =>
     this.setState({ username: event.target.value });
 
