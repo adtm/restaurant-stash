@@ -12,6 +12,12 @@ const Login = styled.div`
   grid-row: 2 / span 3;
 `;
 
+const Map = styled.div`
+  background: #32bff2;
+  grid-row: 1 / span 5;
+  grid-column: 4 / span 6;
+`;
+
 import { Header } from "./home/Header";
 import { Input } from "./home/Input";
 
@@ -33,21 +39,20 @@ export default class Home extends React.Component<object, State> {
             title="Stash"
             description="Forget all the restaurants lists and save everything in one place."
           />
-          <section>
-            <Input
-              value={username}
-              title="username"
-              onChange={this.onUsernameChange}
-              type="text"
-            />
-            <Input
-              value={password}
-              title="password"
-              onChange={this.onPasswordChange}
-              type="password"
-            />
-          </section>
+          <Input
+            value={username}
+            title="username"
+            onChange={this.onUsernameChange}
+            type="text"
+          />
+          <Input
+            value={password}
+            title="password"
+            onChange={this.onPasswordChange}
+            type="password"
+          />
         </Login>
+        <Map />
       </Layout>
     );
   }
