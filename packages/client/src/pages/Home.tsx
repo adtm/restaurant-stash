@@ -1,4 +1,6 @@
 import * as React from "react";
+
+import { Header } from "./home/Header";
 import { Input } from "./home/Input";
 
 const initialState = {
@@ -13,12 +15,12 @@ export default class Home extends React.Component<object, State> {
   public render() {
     const { username, password } = this.state;
     return (
-      <div style={{ padding: 180 }}>
+      <div style={{ padding: "110px 180px" }}>
         <section test-id="header">
-          <h1>Stash</h1>
-          <p>
-            Forget all the restaurants lists and save everything in one place.
-          </p>
+          <Header
+            title="Stash"
+            description="Forget all the restaurants lists and save everything in one place."
+          />
         </section>
         <section>
           <Input
